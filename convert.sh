@@ -1,7 +1,8 @@
 # Le répertoire courant doit être la racine du plugin
 
 # création du répertoire docs
-mkdir docs
+
+cp -R /tmp/jeedom-md-converts/docs/ .
 
 # converion des fichiers asciidoc en xml 
 asciidoctor -b docbook doc/fr_FR/* -D docs/
@@ -24,3 +25,5 @@ done
 mkdir images/
 cp -p ../doc/images/* images/
 
+#Optimation fichier md (image path)
+sed -i 's/..\/images/images/g' *.md
