@@ -15,6 +15,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{{ '/js/jquery.toc.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/js/custom.jeedom.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
 
     <script type="text/javascript">
@@ -25,11 +26,15 @@
           hideText: 'Cacher',
           showText: 'Déplier'
       });
+	    
+	$('#main_content').customJS();    
+	    
     });
     </script>
-    
+
   </head>
     <section class="page-header">
+	  <img src="assets/logo_white.png"></img>
       <h1 class="project-name">{{ site.description | default: site.github.project_tagline }}</h1>
       <a href="index.html" class="btn">Français</a>
       <a href="index_en.html" class="btn">English</a>
@@ -38,7 +43,6 @@
         <nav id="menu-sommaire" ></nav>
         <section id="main_content" class="main-content">
           {{ content }}
-
           <footer class="site-footer">
             <span class="site-footer-credits">Documentation pour Jeedom.</span>
           </footer>
