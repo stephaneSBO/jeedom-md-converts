@@ -59,6 +59,19 @@
 *
 */
 
+#toc, .toc, .mw-warning {
+    background-color: #E5E5E5; /*#DFF0D8*/
+    border: 0 none;
+}
+	
+.toctext,.tocnumber,.toctoggle,#toctogglelink a {
+ color: #606C71; /*#4C8350*/
+}
+
+#toc .toctoggle, .toc .toctoggle {
+	display:none;
+}
+
 /* Fixe la taille et la possition pour les sous éléments */
 #main, #page-header{
 	width: 100%;	
