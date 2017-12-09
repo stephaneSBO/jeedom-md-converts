@@ -2,7 +2,7 @@
 
 # création du répertoire docs
 
-cp -R /tmp/jeedom-md-converts/docs/ .
+cp -R /home/jeedom-md-converts/docs/ .
 
 # converion des fichiers asciidoc en xml 
 asciidoctor -b docbook doc/fr_FR/* -D docs/
