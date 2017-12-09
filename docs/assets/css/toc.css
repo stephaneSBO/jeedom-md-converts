@@ -50,14 +50,23 @@
 
 #toc-container {
 	margin-bottom: 10px;
+	overflow: auto;
 }
 
 /*
 *
-* Personnalisation TOC pour le menu sommaire
+* Personnalisations TOC pour le menu sommaire
 * Thème Jeedom
 *
 */
+
+#toc-container, #toc {
+	height: 100%;	
+}
+
+#toc tbody{
+	vertical-align: top;
+}
 
 #toc, .toc, .mw-warning {
     background-color: #E5E5E5; /*#DFF0D8*/
@@ -80,7 +89,7 @@
 
 /* Fixe la position du menu sommaire et le met en flottant*/
 #menu-sommaire{
-	position: fixed;
+	position: absolute;
 	float: left;
 	width: 20%;
 }
@@ -191,7 +200,7 @@ a[title="Sommaire"] {
 		color: #777;
 	}
 	
-	/*Affiche les liens de retours au sommaire version mobile*/
+	/*Affiche les liens de retours au sommaire en  version mobile*/
 	a[title="Sommaire"] {
 	    display: block;
 	}
@@ -215,6 +224,10 @@ a[title="Sommaire"] {
 	/* ajustement de la largeur du menu sommaire */
 	table#toc{
 		width: 100%;	
+	}
+	
+	#toc .toctoggle, .toc .toctoggle {
+		display:inline;
 	}
 }
 

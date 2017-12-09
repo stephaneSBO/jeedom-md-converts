@@ -20,13 +20,15 @@
 
     <script type="text/javascript">
     $(function() {
-      $('#main_content').toc({
-          renderIn:'#menu-sommaire',
-          contentsText: 'Sommaire',
-          hideText: 'Cacher',
-          showText: 'Déplier'
-      });
+   	/*** Fonction Toc plugin jquery qui crée un menu a partir du contenu de la page ***/
+	$('#main_content').toc({
+	  renderIn:'#menu-sommaire',
+	  contentsText: 'Sommaire',
+	  hideText: 'Cacher',
+	  showText: 'Déplier'
+	});
 	    
+	/*** Fonction qui personnalise le comportement des effets pour jeedom ***/
 	$('#main_content').customJS();    
 	    
     });
@@ -34,17 +36,20 @@
 
   </head>
     <section class="page-header">
-	  <img src="assets/logo_white.png"></img>
-      <h1 class="project-name">{{ site.description | default: site.github.project_tagline }}</h1>
-      <a href="index.html" class="btn">Français</a>
-      <a href="index_en.html" class="btn">English</a>
+	<img id="logo_jeedom" src="assets/logo_white.png"></img>
+      	<h1 id="nom-plugin" class="project-name">{{ site.description | default: site.github.project_tagline }}</h1>
+      	<img id="logo_plugin" class="hide_mobile" src="{{ "https://raw.githubusercontent.com/" | append: site.github.owner_name | append: "/" | append: site.github.repository_name | append: "/master/plugin_info/virtual_icon.png"}}"></img>
+      	<a href="index.html" class="btn">Français</a>
+      	<a href="index_en.html" class="btn">English</a>
     </section>
     <section id="main">
         <nav id="menu-sommaire" ></nav>
         <section id="main_content" class="main-content">
           {{ content }}
           <footer class="site-footer">
-            <span class="site-footer-credits">Documentation pour Jeedom.</span>
+            <div class="site-footer-credits">Documentation pour Jeedom : {{ site.description }}.</div>
+	    <div class="site-footer-credits">Dépot de : {{ site.github.owner_name }}.</div>
+	    <div class="site-footer-credits">Url du dépot : <a href="{{ site.github.repository_url }}">{{ site.github.repository_url }}</a>.</div>
           </footer>
         </section>
     </section>
