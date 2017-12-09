@@ -53,11 +53,14 @@ Un message de type "Your site is ready to be published at https://stephanesbo.gi
 
 Après correction, valider le contenu convertie par ce script. Commme tous script, il est pasrfois nécessaire d'adapter le rendu.
 
+Il est fortement recommandé de revoir les chapitres. Parfois la convertion adapte mal le format md suite à la double converstion ascidoc => xml => md
 
 # FAQ
 
 Erreur :
 asciidoctor: WARNING: configuration.asciidoc: line 12: section title out of sequence: expected level 1, got level 2
 
-
+## changelog
+Mise à jour de la doc
+Suppression des fichiers temporaire xml
  
