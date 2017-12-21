@@ -1,5 +1,7 @@
 # jeedom-md-converts
 
+version 2
+
 ## Pré-requis :
 apt-get install pandoc asciidoctor
 
