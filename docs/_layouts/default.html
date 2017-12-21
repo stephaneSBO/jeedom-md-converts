@@ -23,9 +23,9 @@
    	/*** Fonction Toc plugin jquery qui crée un menu a partir du contenu de la page ***/
 	$('#main_content').toc({
 	  renderIn:'#menu-sommaire',
-	  contentsText: 'Sommaire',
-	  hideText: 'Cacher',
-	  showText: 'Déplier'
+	  contentsText: '{{ page.key_do_not_edit_label.key_do_not_edit_titreMenu }}',
+	  hideText: '{{ page.key_do_not_edit_label.key_do_not_edit_btnMasquer }}',
+	  showText: '{{ page.key_do_not_edit_label.key_do_not_edit_btnAffiche }}'
 	});
 	    
 	/*** Fonction qui personnalise le comportement des effets pour jeedom ***/
@@ -38,7 +38,8 @@
     <section class="page-header">
 	<img id="logo_jeedom" src="assets/logo_white.png"></img>
       	<h1 id="nom-plugin" class="project-name">{{ site.description | default: site.github.project_tagline }}</h1>
-      	<img id="logo_plugin" class="hide_mobile" src="{{ "https://raw.githubusercontent.com/" | append: site.github.owner_name | append: "/" | append: site.github.repository_name | append: "/master/plugin_info/virtual_icon.png"}}"></img>
+      	<img id="logo_plugin" class="hide_mobile" 
+	     src="{{ "https://raw.githubusercontent.com/" | append: site.github.owner_name | append: "/" | append: site.github.repository_name | append: "/master/plugin_info/" | append: site.nameLogo}}"></img>
       	<a href="index.html" class="btn">Français</a>
       	<a href="index_en.html" class="btn">English</a>
     </section>
@@ -50,7 +51,7 @@
             <div class="site-footer-credits">Documentation pour Jeedom : {{ site.description }}.</div>
 	    <div class="site-footer-credits">Dépot de : {{ site.github.owner_name }}.</div>
 	    <div class="site-footer-credits">Url du dépot : <a href="{{ site.github.repository_url }}">{{ site.github.repository_url }}</a>.</div>
-          </footer>
+	   </footer>
         </section>
     </section>
     {% if site.google_analytics %}
