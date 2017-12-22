@@ -1,3 +1,14 @@
+#!/bin/bash
+
+#variables
+pwd
+
+conv_version=$(sed -nr '/conv_version:/p' _config.yml |awk '{ print $2}')
+echo $conv_version
+langs=$(find ../doc -name index.asciidoc | sed 's/..\/doc\///' | sed 's/\/index.asciidoc//' | sed -e 's/...$//' | sed 's/$/,/' | sed '1s/^/langs: [\n/' | sed '$ s/.$//' | sed '$a\\]' | tr -d "\n")
+
+if [ "$conv_version" = "" ]; then
+        echo 'script '
 # Le répertoire courant doit être la racine du plugin
 
 # création du répertoire docs
@@ -20,6 +31,9 @@ do
 # Suppression des fichiers xml  
 #rm $f
 done
+
+#définition du fichier lang.yml
+find ../doc -name index.asciidoc | sed 's/..\/doc\///' | sed 's/\/index.asciidoc//' > lang.yml
 
 # copie des images
 mkdir images/
@@ -46,4 +60,13 @@ sed -i 's/{#.*//' index.md
 # add version
 sed -i '/version:/d' _config.yml
 date +"%Y%m%d%H%M" | sed 's/^/version: /' >> _config.yml
+fi
+
+if [ "$conv_version" = "1" ]; then
+        echo 'script pas encore disponible'
+fi
+
+if [ "$conv_version" = "2" ]; then
+        echo 'script pas encore disponible'
+fi
 
