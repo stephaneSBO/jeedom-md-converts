@@ -30,15 +30,19 @@ sed -i 's/..\/images/images/g' *.md
 
 #variable icon name
 #cat ../plugin_info/info.json | grep '"id" :' |awk '{ print $3}' | sed s/\"//g | sed s/,//g | sed 's/$/_icon.png/' | sed 's/^/nameLogo: /' >> _config.yml
-end=_icon.jpg
+end=_icon.png
 #echo $end
-idname=$(cat plugin_info/info.json | grep '"id" :'|awk '{ print $3}' | sed s/\"//g | sed s/,//g | sed 's/^/nameLogo: /' | dos2unix)$end
+pwd
+idname=$(cat ../plugin_info/info.json | grep '"id" :'|awk '{ print $3}' | sed s/\"//g | sed s/,//g | sed 's/^/nameLogo: /' | dos2unix)$end
 #echo $idname
-sed -i '/nameLogo/c\'"$idname"'' docs/_config.yml
+sed -i '/nameLogo/c\'"$idname"'' _config.yml
+
+#variable index.md
+sed -i '1s/^/---\nkey_do_not_edit_lang: fr\nkey_do_not_edit_label:\n    key_do_not_edit_titreMenu: Sommaire\n    key_do_not_edit_btnAffiche: Déplier\n    key_do_not_edit_btnMasquer: Cacher\n---\n/' index.md
 
 # correction des %22 interprété par github page
 sed -i 's/%22/"/g' *.md
-
+sed -i 's/{#.*//' index.md
 # add version
 sed -i '/version:/d' _config.yml
 date +"%Y%m%d%H%M" | sed 's/^/version: /' >> _config.yml

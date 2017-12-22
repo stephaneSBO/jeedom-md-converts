@@ -4,16 +4,17 @@
 @import "{{ site.theme }}";
 .page-header {
  padding: 1rem 6rem;
- color:#fff;
+ color: #{{ site.themeCustom.head-color }};/*#fff;*/
  text-align:center;
- background-color:#96c927;
+ background-color: #{{ site.themeCustom.head-background-color }};
  background-image: none;
 }
+
 .main-content h1,.main-content h2,.main-content h3,.main-content h4,.main-content h5,.main-content h6 {
  margin-top:2rem;
  margin-bottom:1rem;
  font-weight:normal;
- color:#82BA1B;
+ color:#{{ site.themeCustom.hx-color }};/*#82BA1B;*/
 }
 blockquote {
  background-color:#F3F6FA;
@@ -24,6 +25,11 @@ blockquote {
 * Personnalisations pour la doc jeedom
 *
 */
+body{
+ background-color: #{{ site.themeCustom.body-background-color }};
+ color: #{{ site.themeCustom.body-color }};
+}
+
 
 #logo_plugin {
   max-height: 100px;
