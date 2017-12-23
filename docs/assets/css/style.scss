@@ -1,12 +1,17 @@
 ---
 ---
+{% if site.themePersoActif %}
+   {% assign themeCustom = site.themePerso %}
+{% else %}
+	   {% assign themeCustom = site.themeDefaut %}
+{% endif %}
 
 @import "{{ site.theme }}";
 .page-header {
  padding: 1rem 6rem;
- color: #{{ site.themeCustom.head-color }};/*#fff;*/
+ color: #{{ themeCustom.head-color }};/*#fff;*/
  text-align:center;
- background-color: #{{ site.themeCustom.head-background-color }};
+ background-color: #{{ themeCustom.head-background-color }};
  background-image: none;
 }
 
@@ -14,7 +19,7 @@
  margin-top:2rem;
  margin-bottom:1rem;
  font-weight:normal;
- color:#{{ site.themeCustom.hx-color }};/*#82BA1B;*/
+ color:#{{ themeCustom.hx-color }};/*#82BA1B;*/
 }
 blockquote {
  background-color:#F3F6FA;
@@ -26,8 +31,8 @@ blockquote {
 *
 */
 body{
- background-color: #{{ site.themeCustom.body-background-color }};
- color: #{{ site.themeCustom.body-color }};
+ background-color: #{{ themeCustom.body-background-color }};
+ color: #{{ themeCustom.body-color }};
 }
 
 
@@ -44,6 +49,9 @@ body{
   position: relative;
 }
 
+.page-header a.btn{
+  text-transform: uppercase;
+}
 /* Style des éléments quant le header est plus petit*/
 .header-min {
   height: 80px;
@@ -57,7 +65,7 @@ body{
 }
 
 .contenu-header-min{
-  padding: 220px 0 40px 0 !important;
+  padding: 220px 5pk 40px 5px !important;
 }
 
 .menu-header-min{
@@ -103,6 +111,7 @@ body{
     100% { left:0%; top:0%;}
 }
 
+
 @media screen and (max-height: 800px) {
   .project-name {
     font-size: 2rem !important;
@@ -121,3 +130,5 @@ body{
         -webkit-transform: translate(-50%, 25%); 
  }
 }
+
+

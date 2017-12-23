@@ -4,7 +4,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
@@ -14,30 +13,39 @@
     <script src="{{ '/js/jquery.toc.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src="{{ '/js/custom.jeedom.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script type="text/javascript">
-    $(function() {
-   	/*** Fonction Toc plugin jquery qui crée un menu a partir du contenu de la page ***/
-	$('#main_content').toc({
-	  renderIn:'#menu-sommaire',
-	  contentsText: '{{ page.key_do_not_edit_label.key_do_not_edit_titreMenu }}',
-	  hideText: '{{ page.key_do_not_edit_label.key_do_not_edit_btnMasquer }}',
-	  showText: '{{ page.key_do_not_edit_label.key_do_not_edit_btnAffiche }}'
-	});
-	    
-	/*** Fonction qui personnalise le comportement des effets pour jeedom ***/
-	$('#main_content').customJS();    
-	    
-    });
+	    $(function() {
+
+		/*** Fonction Toc plugin jquery qui crée un menu a partir du contenu de la page ***/
+		$('#main_content').toc({
+		  renderIn:'#menu-sommaire',
+		  contentsText: '{{ page.key_do_not_edit_label.key_do_not_edit_titreMenu }}',
+		  hideText: '{{ page.key_do_not_edit_label.key_do_not_edit_btnMasquer }}',
+		  showText: '{{ page.key_do_not_edit_label.key_do_not_edit_btnAffiche }}'
+		});
+
+		/*** Fonction qui personnalise le comportement des effets pour jeedom ***/
+		$('#main_content').customJS({
+			traduction: JSON.parse('{{ page.key_do_not_edit_label }}'.replace(/=>/g,':'))	
+		});    
+
+	    });
     </script>
 
   </head>
-  <body>
+  <body data-before="{{ page.key_do_not_edit_label.key_do_not_edit_messageHeadMobile }}">
     <section class="page-header">
 	<img id="logo_jeedom" src="assets/logo_white.png"></img>
       	<h1 id="nom-plugin" class="project-name">{{ site.description | default: site.github.project_tagline }}</h1>
       	<img id="logo_plugin" class="hide_mobile" 
 	     src="{{ "https://raw.githubusercontent.com/" | append: site.github.owner_name | append: "/" | append: site.github.repository_name | append: "/master/plugin_info/" | append: site.nameLogo}}"></img>
-      	<a href="index.html" class="btn">Français</a>
-      	<a href="index_en.html" class="btn">English</a>
+      	  
+	
+	{% if site.langs.size >= 2 %}
+	  {% for lang in site.langs %}
+	    <a href="index{% if lang != "fr" %}_{{ lang }}{% endif %}.html" class="btn">{{ lang }}</a>
+	  {% endfor %}
+	{% endif %}
+	
     </section>
     <section id="main">
         <nav id="menu-sommaire" ></nav>
@@ -46,8 +54,8 @@
           <footer class="site-footer">
             <div class="site-footer-credits">Documentation pour Jeedom : {{ site.description }}.</div>
 	    <div class="site-footer-credits">Dépot de : {{ site.github.owner_name }}.</div>
-	    <div class="site-footer-credits">Url du dépot : <a href="{{ site.github.repository_url }}">{{ site.github.repository_url }}</a>.</div>
-	    <div class="site-footer-credits">Test : {{ site.data }}.</div>
+	    <div class="site-footer-credits">Url du dépot : <a href="{{ site.github.repository_url }}">{{ site.github.repository_url }}</a>.</div>	  
+           {% comment %} <div class="site-footer-credits">Test : {{ page.key_do_not_edit_label }}.</div>{% endcomment %}
 	</footer>
         </section>
     </section>

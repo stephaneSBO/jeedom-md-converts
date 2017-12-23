@@ -1,5 +1,6 @@
 theme: jekyll-theme-cayman
-themeCustom: 
+themePersoActif: true
+themePerso:
   body-background-color: 'f0f8df'
   body-color: '2E5519'
   head-background-color: '96C927'
@@ -8,16 +9,16 @@ themeCustom:
   menu-background-color: 'D7F6C0'
   menu-title-color: '82BA1B'
   menu-color: '1F5615'
-nameLogo: virtual_icon.png
-jeedomColor: 96c927
-
-#memo pour dev thème
-memo: 
-  body-background-color: '041453'  
-  body-color: 'A7C2FF'  
-  head-background-color: '133176'  
-  head-color: '79b0f6'  
-  hx-color: '457CDF'  
-  menu-background-color: '080E49'  
-  menu-color: '4F71C2'  
-  menu-title-color: 'a9cfff'
+themeDefaut: 
+  body-background-color: '041453'
+  body-color: 'A7C2FF'
+  head-background-color: '133176'
+  head-color: '79b0f6'
+  hx-color: '457CDF'
+  menu-background-color: '080E49'
+  menu-title-color: '4F71C2'
+  menu-color: 'a9cfff'
+langs:
+Theme_version:
+nameLogo:
+dateConversion:

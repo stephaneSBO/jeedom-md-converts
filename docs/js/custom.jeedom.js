@@ -8,14 +8,16 @@
 ***    les numéro de chapitre au titre des chapitre et sous titre
 *** - menuType : 1 (defaut) permet de choisir pour le type de menu
 ***    pour le moment il ni as qu'une seule version
-***
+*** - linkSommaire : permet de choisir le type de lien en version 
+***     mobile pour le retrous en haut de page
 ********************************************************************/
 (function($) {
         $.fn.customJS = function(settings) {
                 /*** Configuration par défaut ***/
                 var config = {
                     menuType: 1,
-                    numTitre: true
+                    numTitre: true,
+                    linkSommaire : 'link'
                 };
                 
                 /*** Chargement de paramètre user ***/
@@ -81,6 +83,12 @@
                                 }
                         }
                         window.addEventListener('scroll', onScroll);
+                }
+                
+                /*** Ajout des liens retour au sommaire ***/
+                if(config.linkSommaire == 'link'){
+                     $('#main_content h1:gt(0), #main_content h2').before('<p><a class="linkToTop" href="#toctitle" title="'+ config.traduction.key_do_not_edit_titreMenu +'">'+ config.traduction.key_do_not_edit_titreMenu +'</a></p>');
+      //console.log('Test Toc', config.traduction);
                 }
         };
         return this;
