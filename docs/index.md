@@ -3,15 +3,49 @@
 version 2
 
 ## Pré-requis :
-apt-get install pandoc asciidoctor
+apt-get install pandoc asciidoctor (possibilité d'installer les dépendances via le script)
 
-le clone doit être fait dans le rép /home/ 
+L répertoire du clone de votre plugin doit être fait au même niveau que le répertoire du script de conversion.
+Exemple : 
 
-le cas contraire change le script convert.sh
+```
+/home# ls -l
+drwxr-xr-x 4 root    root     4096 déc.  26 16:43 jeedom-md-converts
+drwxr-xr-x 8 root    root     4096 déc.  21 18:29 plugin-virtual
+```
+
+## Contenu du depôt "jeedom-md-convert"
+- README
+- docs/ (répertoire contenant les fichiers js, css, html, yml nécessaire à la future doc).
+- Convert.sh (script de conversion des documents ancien format ASCIIDOC vers Markdown.
+
+## Utilisation
+
+### Installer le script de conversion 
+
+Dans l'exemple ci dessous, le script de conversion et le plugin à convertir seront installer dans le répertoire home/
+```
+/home# Git clone https://github.com/stephaneSBO/jeedom-md-converts.git
+```
+Vous devrier avoir : 
+```
+/home# ls -l
+drwxr-xr-x 4 root    root     4096 déc.  26 16:43 jeedom-md-converts
+```
 
 ## Cloner le plugin ou le fork du plugin : 
-cd /home
+
+Exemple avec le plugin-weather :
+```
 git clone https://github.com/stephaneSBO/plugin-weather.git
+```
+
+Vous devrier avoir : 
+```
+/home# ls -l
+drwxr-xr-x 4 root    root     4096 déc.  26 16:43 jeedom-md-converts
+drwxr-xr-x 8 root    root     4096 déc.  21 18:29 plugin-virtual
+```
 
 ## lancer le script 
  ### Se placer à la racine du plugin
