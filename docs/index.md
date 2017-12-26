@@ -33,7 +33,7 @@ Vous devrier avoir :
 drwxr-xr-x 4 root    root     4096 déc.  26 16:43 jeedom-md-converts
 ```
 
-## Cloner le plugin ou le fork du plugin : 
+### Cloner le plugin ou le fork du plugin : 
 
 Exemple avec le plugin-weather :
 ```
@@ -47,14 +47,15 @@ drwxr-xr-x 4 root    root     4096 déc.  26 16:43 jeedom-md-converts
 drwxr-xr-x 8 root    root     4096 déc.  21 18:29 plugin-virtual
 ```
 
-## lancer le script 
- ### Se placer à la racine du plugin
- ex : 
-cd /home/plugin-weather/
+### Exécution du script 
+
+Se placer à la racine du plugin
+
+```cd /home/plugin-weather/```
 
  ### lancer le script
 
-/home/jeedom-md-converts/convert.sh
+```../jeedom-md-converts/convert.sh```
 
 ## ajouter le répertoire docs 
 
