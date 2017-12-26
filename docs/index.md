@@ -49,13 +49,17 @@ drwxr-xr-x 8 root    root     4096 déc.  21 18:29 plugin-virtual
 
 ### Exécution du script 
 
-Se placer à la racine du plugin
+- Se placer à la racine du plugin
 
 ```cd /home/plugin-weather/```
 
- ### lancer le script
+- lancer le script
 
 ```../jeedom-md-converts/convert.sh```
+
+### Convertir la documentation
+
+Si c'est la première exécution, il vous sera peut êtes nécessaire d'installer les dépendances du script =>  [lien afficher](## Installation des dépendances) 
 
 ## ajouter le répertoire docs 
 
@@ -91,6 +95,8 @@ Un message de type "Your site is ready to be published at https://stephanesbo.gi
 Après correction, valider le contenu convertie par ce script. Commme tous script, il est pasrfois nécessaire d'adapter le rendu.
 
 Il est fortement recommandé de revoir les chapitres. Parfois la convertion adapte mal le format md suite à la double converstion ascidoc => xml => md
+
+## Installation des dépendances
 
 # FAQ
 
