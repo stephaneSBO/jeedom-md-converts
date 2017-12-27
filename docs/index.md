@@ -61,6 +61,8 @@ drwxr-xr-x 8 root    root     4096 déc.  21 18:29 plugin-virtual
 
 Si c'est la première exécution, il vous sera peut êtes nécessaire d'installer les dépendances du script =>  [lien afficher](#tocAnchor-1-1-9) 
 
+![capture001](images/no_icon.png)
+
 ## ajouter le répertoire docs 
 
 git add docs/
